@@ -1,0 +1,29 @@
+target_device:
+  name: "STM32F407VG (Example)"
+  architecture: "ARM Cortex-M4"
+  endianness: "little"
+
+memory_map:
+  flash:
+    start: "0x08000000"
+    length: "1024K"
+  sram:
+    start: "0x20000000"
+    length: "128K"
+
+peripheral_addresses:
+  RCC_BASE: "0x40023800"
+  GPIOA_BASE: "0x40020000"
+  GPIOD_BASE: "0x40020C00"
+  USART2_BASE: "0x40004400"
+
+registers:
+  RCC_AHB1ENR:
+    address: "0x40023830"
+    description: "AHB1 Peripheral Clock Enable. Bit 0=GPIOA, Bit 3=GPIOD."
+  GPIOD_MODER:
+    address: "0x40020C00"
+    description: "GPIO Port D Mode Register. Sets pins to Input/Output."
+  GPIOD_ODR:
+    address: "0x40020C14"
+    description: "GPIO Port D Output Data Register. Controls pin state."
